@@ -11,23 +11,25 @@ body {
 }
 
 .menu {
-  display: inline-block;
-  background-color: #564AA8;
-  color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  color: transparent;
+  -webkit-text-stroke: 1px black;
   text-decoration: none;
-  padding: 12px 24px;
   font-size: 1.1em;
-  width: 150px;
+  font-weight: bold;
   text-align: center;
-  border: none;
+  border: 1px solid black;
   border-radius: 6px;
   cursor: pointer;
-  position: absolute;
 }
 
-.menu:nth-child(1) { top: 80px; left: 50px; }
-.menu:nth-child(3) { top: 80px; left: 500px; }
-.menu:nth-child(5) { top: 80px; left: 1000px; }
+.menu:nth-child(1) { top: 80px; left: 50px; width: 120px; height: 60px; line-height: 50px; }
+.menu:nth-child(3) { top: 80px; left: 500px; width: 150px; height: 60px; line-height: 50px; }
+.menu:nth-child(5) { top: 80px; left: 1000px; width: 120px; height: 60px; line-height: 50px; }
 
 .dropdown {
   position: relative;
@@ -38,18 +40,16 @@ body {
 .submenu {
   display: none;
   position: absolute;
-  top: 125px;
-  left: 50px;
   background-color: black;
   padding: 10px;
   border-radius: 6px;
-  min-width: 160px;
+  min-width: 130px;
   z-index: 10;
 }
 
-.submenu:nth-child(2) { top: 125px; left: 50px; }
-.submenu:nth-child(4) { top: 125px; left: 500px; }
-.submenu:nth-child(6) { top: 125px; left: 1000px; }
+.submenu:nth-child(2) { top: 141px; left: 50px; }
+.submenu:nth-child(4) { top: 141px; left: 500px; }
+.submenu:nth-child(6) { top: 141px; left: 1000px;}
 
 .menu:hover + .submenu, .menu + .submenu:hover {
   display: block;
@@ -64,4 +64,39 @@ body {
 
 .submenu a:hover {
   background-color: #444;
+}
+
+.menu-text {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgba(255,255,255,0.7);
+  -webkit-text-stroke: 1px black;
+}
+
+.menu-img {
+  display: block;
+}
+
+.menu:nth-child(1) .menu-img {
+  width: 80px;
+  height: 80px;
+  margin-top: -25px;
+}
+
+.menu:nth-child(3) .menu-img {
+  width: 40px;
+  height: 40px;
+  margin-top: -1px;
+}
+
+.menu:nth-child(5) .menu-img {
+  width: 50px;
+  height: 50px;
+  margin-top: -7px;
 }
